@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Dia Dos Namorados</title>
+  <style>
+    body {
+      background-color: rgb(3, 39, 39);
+      margin: 0;
+      padding: 20px;
+      font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+      color: rgba(243, 240, 240, 0.76);
+      text-align: center;
+    }
+
+    .player-wrapper {
+      background-color: #121212;
+      width: 240px;
+      margin: 20px auto;
+      padding: 12px 15px;
+      border-radius: 18px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .player-wrapper img {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .player-info {
+      flex: 1;
+      text-align: left;
+    }
+
+    .player-info h4 {
+      margin: 0;
+      font-size: 14px;
+      color: #1DB954;
+    }
+
+    .player-info p {
+      margin: 2px 0 6px;
+      font-size: 10px;
+      color: #ccc;
+    }
+
+    audio {
+      width: 100%;
+      height: 20px;
+      filter: invert(100%);
+    }
+
+    hr {
+      width: 400px; 
+      border: 1px solid #ffffffc4; 
+      margin: 20px auto; 
+    }
+
+    .carousel {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      overflow: hidden;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .slides {
+      display: flex;
+      width: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .buttons button {
+      background-color: rgba(255, 254, 254, 0);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="player-wrapper">
+    <img src="transferir.jpg" alt="Capa do Álbum">
+    <div class="player-info">
+      <h4>Mumuzinho</h4>
+      <p>Curto Circuito</p>
+      <audio controls autoplay loop>
+        <source src="Mumuzinho - Curto Circuito.mp3" type="audio/mpeg">
+       
+      </audio>
+    </div>
+  </div>
+
+  <h1>Maria e Gabriel</h1>
+
+  <div class="carousel">
+    <div class="slides" id="slides">
+      <div class="slide"><img src="20241224_2046091.jpg" alt="Imagem 1"></div>
+      <div class="slide"><img src="WhatsApp Image 2025-06-11 at 14.04.04.jpeg" alt="Imagem 1"></div>
+      <div class="slide"><img src="WhatsApp Image 2025-06-11 at 14.04.05 (1).jpeg" alt="Imagem 1"></div>
+      <div class="slide"><img src="WhatsApp Image 2025-06-11 at 14.04.03 (1).jpeg" alt="Imagem 1"></div>
+      <div class="slide"><img src="WhatsApp Image 2025-06-11 at 14.04.03 (2).jpeg" alt="Imagem 1"></div>
+      <div class="slide"><img src="WhatsApp Image 2025-06-11 at 14.04.03 (3).jpeg" alt="Imagem 1"></div>
+      <div class="slide"><img src="WhatsApp Image 2025-06-11 at 14.04.05 (2).jpeg" alt="Imagem 1"></div>
+      <div class="slide"><img src="WhatsApp Image 2025-06-11 at 14.04.05 (3).jpeg" alt="Imagem 1"></div>
+      <div class="slide"><img src="WhatsApp Image 2025-06-11 at 14.04.05.jpeg" alt="Imagem 1"></div>
+
+    </div>
+    <div class="buttons">
+      <button onclick="prevSlide()">❮</button>
+      <button onclick="nextSlide()">❯</button>
+    </div>
+  </div>
+
+  <h3>TE AMO ❤️</h3> 
+  <hr>
+
+  <p>
+    Obrigado por sempre estar comigo.<br>
+    Você é minha parceira de vida!<br><br>
+    Tenho muito orgulho de você e de todas as nossas conquistas.<br>
+    Que nosso relacionamento dure muito tempo e que a gente possa<br>
+    se amar eternamente. ❤️
+  </p>
+  <script>
+    
+    let index = 0;
+    const slides = document.getElementById("slides");
+    const totalSlides = slides.children.length;
+
+    function showSlide(i) {
+      index = (i + totalSlides) % totalSlides;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+      showSlide(index + 1);
+    }
+
+    function prevSlide() {
+      showSlide(index - 1);
+    }
+
+    // Slide automático
+    setInterval(nextSlide, 3000);
+  </script>
+
+</body>
+</html>
